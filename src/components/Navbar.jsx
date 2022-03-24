@@ -1,6 +1,7 @@
 import React from "react";
-import { Typography, Avatar } from "antd";
+import { Typography, Avatar, Menu } from "antd";
 import { Link } from "react-router-dom";
+import { HomeOutlined } from "@ant-design/icons";
 
 const Navbar = () => {
   return (
@@ -11,6 +12,12 @@ const Navbar = () => {
           <Link to="/"> CryptApp </Link>
         </Typography.Title>
       </div>
+
+      <Menu theme="light">
+        <Menu.Item icon={<HomeOutlined />}>
+          <Link to="/"> Home </Link>
+        </Menu.Item>
+      </Menu>
     </div>
   );
 };
