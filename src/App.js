@@ -52,7 +52,7 @@ const App = () => {
                         All Rights Reserved
                     </Typography.Title>
                     <Space>
-                        <Link to='/'> Home Page </Link>
+                        <Link to='/'> Home </Link>
                         <Link to='/exchanges'> Exchanges </Link>
                         <Link to='/news'> News </Link>
                     </Space>
