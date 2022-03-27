@@ -1,7 +1,15 @@
 import { Typography, Row, Col, Statistic } from "antd";
 import React from "react";
+import { useGetCryptosQuery } from "../services/cryptoAPI";
 
 const HomePage = () => {
+  const { data, isFetching } = useGetCryptosQuery();
+  const globalStats = data?.data?.stats;
+
+  console(data);
+
+  if (isFetching) return "Loading...";
+
   return (
     <>
       <Typography.Title level={2} className="heading">
@@ -11,7 +19,10 @@ const HomePage = () => {
       <Row>
         <Col span={12}>
           {" "}
-          <Statistic title="Total Cryptocurrencies" value={1} />{" "}
+          <Statistic
+            title="Total Cryptocurrencies"
+            value={globalStats.total}
+          />{" "}
         </Col>
         <Col span={12}>
           {" "}
