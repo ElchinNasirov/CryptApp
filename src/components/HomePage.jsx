@@ -6,8 +6,6 @@ const HomePage = () => {
   const { data, isFetching } = useGetCryptosQuery();
   const globalStats = data?.data?.stats;
 
-  console.log(data);
-
   if (isFetching) return "Loading...";
 
   return (
@@ -19,7 +17,10 @@ const HomePage = () => {
       <Row>
         <Col span={12}>
           {" "}
-          <Statistic title="Total Cryptocurrencies" value={1} />{" "}
+          <Statistic
+            title="Total Cryptocurrencies"
+            value={globalStats.total}
+          />{" "}
         </Col>
         <Col span={12}>
           {" "}
