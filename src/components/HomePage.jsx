@@ -4,9 +4,12 @@ import { useGetCryptosQuery } from "../services/cryptoAPI";
 
 // Converts long numbers into pretty, human-readable strings: 2000 => '2k'
 import millify from "millify";
+import { Link } from "react-router-dom";
+import Cryptocurrencies from "./Cryptocurrencies";
+import News from "./News";
 
 const HomePage = () => {
-  const { data, isFetching } = useGetCryptosQuery();
+  const { data, isFetching } = useGetCryptosQuery(10);
   const globalStats = data?.data?.stats;
 
   if (isFetching) return "Loading...";
@@ -54,6 +57,30 @@ const HomePage = () => {
           />{" "}
         </Col>
       </Row>
+
+      <div className="home-heading-container">
+        <Typography.Title level={2} className="home-title">
+          {" "}
+          Top 10 Crypcocurrencies
+        </Typography.Title>
+        <Typography.Title level={3} className="show-more">
+          {" "}
+          <Link to="/cryptocurrencies"> Show More</Link>{" "}
+        </Typography.Title>
+      </div>
+      <Cryptocurrencies simplified />
+
+      <div className="home-heading-container">
+        <Typography.Title level={2} className="home-title">
+          {" "}
+          Latest Crypto News
+        </Typography.Title>
+        <Typography.Title level={3} className="show-more">
+          {" "}
+          <Link to="/cryptocurrencies"> Show More </Link>{" "}
+        </Typography.Title>
+      </div>
+      <News simplified />
     </>
   );
 };

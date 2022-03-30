@@ -41,3 +41,19 @@
 .crypto-card .crypto-image {
   width: 35px;
 }
+
+.search-crypto {
+  margin: 20px auto 30px auto;
+  width: 250px;
+}
+
+.home-heading-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.show-more {
+  margin-top: 0px !important;
+}
