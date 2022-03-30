@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import millify from "millify";
 import { Link } from "react-router-dom";
-import { Card, Row, Col, Input } from "antd";
+import { Card, Row, Col } from "antd";
 import { useGetCryptosQuery } from "../services/cryptoAPI";
 
 const Cryptocurrencies = () => {
@@ -19,7 +19,7 @@ const Cryptocurrencies = () => {
                 extra={<img className="crypto-image" src={crypto.iconUrl} />}
                 hoverable
               >
-                <p>Price: {millify(crypto.price)}</p>
+                <p>Price: {`${"$"}${millify(crypto.price)}`}</p>
                 <p>Market Cap: {millify(crypto.marketCap)}</p>
                 <p>Daily Change: {millify(crypto.change)}</p>
               </Card>
