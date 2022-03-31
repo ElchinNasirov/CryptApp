@@ -1,7 +1,14 @@
 import React from "react";
 
-const News = () => {
-  return <div>News</div>;
+import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
+
+const News = ({ simplified }) => {
+  const { data } = useGetCryptoNewsQuery({
+    newsCategory: "Cryptocurrency",
+    count: simplified ? 6 : 12,
+  });
+
+  return <div></div>;
 };
 
 export default News;
