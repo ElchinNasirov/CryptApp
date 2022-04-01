@@ -5,8 +5,10 @@ import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
 const News = ({ simplified }) => {
   const { data } = useGetCryptoNewsQuery({
     newsCategory: "Cryptocurrency",
-    count: simplified ? 6 : 12,
+    count: simplified ? 10 : 100,
   });
+
+  console.log(data);
 
   return <div></div>;
 };
