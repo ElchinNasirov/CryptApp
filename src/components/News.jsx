@@ -1,7 +1,8 @@
 import React from "react";
-import { Row, Col, Card, Typography } from "antd";
+import { Row, Col, Card, Typography, Avatar, Text } from "antd";
 
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
+import moment from "moment";
 
 const News = ({ simplified }) => {
   const { data } = useGetCryptoNewsQuery({
@@ -23,6 +24,22 @@ const News = ({ simplified }) => {
                   {news.name}
                 </Typography.Title>
                 <img src={news?.image?.thumbnail?.contentUrl} alt="news" />
+              </div>
+              <p>
+                {news.description > 100
+                  ? `${news.description.substring(0, 100)}...`
+                  : news.description}
+              </p>
+              <div>
+                <div className="provider-container">
+                  <Avatar
+                    src={news.provider[0]?.image?.thumbnail?.contentUrl}
+                    alt=""
+                  />
+                  <Typography.Text>
+                    {moment(news.datePublished).startOf("ss").fromNow()}
+                  </Typography.Text>
+                </div>
               </div>
             </a>
           </Card>
