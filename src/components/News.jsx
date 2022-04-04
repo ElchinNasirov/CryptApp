@@ -22,6 +22,7 @@ const News = ({ simplified }) => {
                 <Typography.Title className="news-title" level={4}>
                   {news.name}
                 </Typography.Title>
+                <img src={news?.image?.thumbnail?.contentUrl} alt="news" />
               </div>
             </a>
           </Card>
