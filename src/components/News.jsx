@@ -36,10 +36,14 @@ const News = ({ simplified }) => {
                     src={news.provider[0]?.image?.thumbnail?.contentUrl}
                     alt=""
                   />
-                  <Typography.Text>
-                    {moment(news.datePublished).startOf("ss").fromNow()}
+                  <Typography.Text className="provider-name">
+                    {news.provider[0]?.name}
                   </Typography.Text>
                 </div>
+
+                <Typography.Text>
+                  {moment(news.datePublished).startOf("ss").fromNow()}
+                </Typography.Text>
               </div>
             </a>
           </Card>

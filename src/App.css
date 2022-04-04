@@ -83,3 +83,7 @@
   display: flex;
   justify-content: space-between;
 }
+
+.provider-name {
+  margin-left: 10px;
+}
