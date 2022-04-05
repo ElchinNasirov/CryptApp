@@ -1,12 +1,7 @@
 import React from "react";
 import { Typography, Avatar, Menu } from "antd";
 import { Link } from "react-router-dom";
-import {
-  BulbOutlined,
-  FundOutlined,
-  HomeOutlined,
-  MoneyCollectOutlined,
-} from "@ant-design/icons";
+import { BulbOutlined, FundOutlined, HomeOutlined, MoneyCollectOutlined } from "@ant-design/icons";
 
 const Navbar = () => {
   return (
