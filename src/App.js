@@ -7,7 +7,7 @@ import Navbar from './components/Navbar';
 import HomePage from './components/HomePage';
 import Exchanges from './components/Exchanges';
 import Cryptocurrencies from './components/Cryptocurrencies';
-import CryptoDetailes from './components/CryptoDetailes';
+import CryptoDetails from './components/CryptoDetails';
 import News from './components/News';
 import { Link } from 'react-router-dom';
 
@@ -36,7 +36,7 @@ const App = () => {
                             </Route>
 
                             <Route exact path='/crypto/:cryptoId'>
-                                <CryptoDetailes />
+                                <CryptoDetails />
                             </Route>
 
                             <Route exact path='/news'>
